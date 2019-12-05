@@ -1,4 +1,4 @@
-import 'result_data.dart';
+import '../model/result_data.dart';
 
 class ApiResponse {
   final int page;

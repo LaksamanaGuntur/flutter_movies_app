@@ -2,12 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_movies_app/ui/list_widget.dart';
+import 'ui/list_data.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,9 +37,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Popular Movies'),
+        centerTitle: true,
       ),
       body: Container(
-        child: ListWidget(),
+        child: ListData(),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,

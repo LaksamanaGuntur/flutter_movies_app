@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movies_app/model/result_data.dart';
-import 'package:flutter_movies_app/utils/constant.dart';
+import '../model/result_data.dart';
+import '../utils/constant.dart';
 
-class ListItemWidget extends StatelessWidget {
+class ItemData extends StatelessWidget {
   final ResultData resultData;
   final Function function;
 
-  const ListItemWidget({
+  const ItemData({
     Key key,
     this.resultData,
     this.function
@@ -26,7 +26,7 @@ class ListItemWidget extends StatelessWidget {
             ),
             child: new FadeInImage.assetNetwork(
               placeholder: AssetsImages.imgPlaceholder,
-              image: 'https://image.tmdb.org/t/p/w185${resultData.backdropPath}',
+              image: '${BaseUrl.imageUrl}${resultData.backdropPath}',
               fit: BoxFit.fill,
             ),
           ),

@@ -1,9 +1,9 @@
-import 'package:flutter_movies_app/model/api_response.dart';
-import 'package:flutter_movies_app/repository/user_repository.dart';
+import 'package:flutter_movies_app/repository/api_response.dart';
+import 'package:flutter_movies_app/repository/data_repository.dart';
 import 'package:rxdart/rxdart.dart';
 
 class UserBloc {
-  final _repository = UserRepository();
+  final _repository = DataRepository();
   final _subject = BehaviorSubject<ApiResponse>();
 
   getUser() async {

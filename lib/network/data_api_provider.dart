@@ -1,13 +1,12 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_movies_app/model/api_response.dart';
-import 'package:flutter_movies_app/utils/logs.dart';
+import '../repository/api_response.dart';
+import '../utils/constant.dart';
+import '../utils/logs.dart';
 
-class UserApiProvider {
-  final _apiKey = '08225e8f2017efb2bb80528de1674d0e';
-  final _baseUrl = "https://api.themoviedb.org/3/movie";
+class DataApiProvider {
   Dio _dio;
 
-  UserApiProvider() {
+  DataApiProvider() {
     BaseOptions options = new BaseOptions(
       connectTimeout: 5000,
       receiveTimeout: 3000,
@@ -18,7 +17,7 @@ class UserApiProvider {
 
   Future<ApiResponse> getData() async {
     try {
-      Response response = await _dio.get("$_baseUrl/popular?api_key=$_apiKey");
+      Response response = await _dio.get("${BaseUrl.apiBaseUrl}/popular?api_key=${BaseUrl.apiKey}");
       return ApiResponse.fromJson(response.data);
     } catch (error, stacktrace) {
       print("Exception occured: $error stackTrace: $stacktrace");
